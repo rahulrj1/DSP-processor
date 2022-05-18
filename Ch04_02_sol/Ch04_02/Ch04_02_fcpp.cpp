@@ -4,6 +4,14 @@
 #include <immintrin.h>
 #include "Ch04_02.h"
 
+void Unpack_with_itself(YmmVal c[2], const YmmVal* a) {
+	__m256i a_vals = _mm256_load_si256((__m256i*)a);
+	__m256i c_vals0 = _mm256_unpacklo_epi32(a_vals, a_vals);
+	__m256i c_vals1 = _mm256_unpackhi_epi32(a_vals, a_vals);
+	_mm256_store_si256((__m256i*) & c[0], c_vals0);
+	_mm256_store_si256((__m256i*) & c[1], c_vals1);
+}
+
 void UnpackU32_U64_Iavx2(YmmVal c[2], const YmmVal* a, const YmmVal* b)
 {
 	__m256i a_vals = _mm256_load_si256((__m256i*)a);

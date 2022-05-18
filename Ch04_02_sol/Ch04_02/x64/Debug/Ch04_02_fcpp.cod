@@ -50,8 +50,8 @@ __4CB88277_xlocnum DB 01H
 __845859A3_ios DB 01H
 __67DA974F_xlocmon DB 01H
 __D96D2425_xloctime DB 01H
-__107F9394_YmmVal@h DB 01H
-__E321C1A6_Ch04_02_fcpp@cpp DB 01H
+__B8537A73_YmmVal@h DB 01H
+__CC351F00_Ch04_02_fcpp@cpp DB 01H
 __6151C81E_sstream DB 01H
 __A2FF0B9E_istream DB 01H
 __C12F3EA4_ostream DB 01H
@@ -73,6 +73,7 @@ PUBLIC	??$_Getvals@_W@?$time_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@
 PUBLIC	??$_Getvals@_W@?$time_get@_WV?$istreambuf_iterator@_WU?$char_traits@_W@std@@@std@@@std@@IEAAX_WAEBV_Locinfo@1@@Z ; std::time_get<wchar_t,std::istreambuf_iterator<wchar_t,std::char_traits<wchar_t> > >::_Getvals<wchar_t>
 PUBLIC	?UnpackU32_U64_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z	; UnpackU32_U64_Iavx2
 PUBLIC	?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z	; PackI32_I16_Iavx2
+PUBLIC	?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z	; Unpack_with_itself
 PUBLIC	__JustMyCode_Default
 PUBLIC	??_C@_0GI@GFIAKDGM@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@ ; `string'
 PUBLIC	?__LINE__Var@?0??_Maklocwcs@std@@YAPEA_WPEB_W@Z@4JA ; `std::_Maklocwcs'::`1'::__LINE__Var
@@ -157,6 +158,12 @@ $pdata$?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z DD imagerel $LN3
 	DD	imagerel $LN3+181
 	DD	imagerel $unwind$?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z
 pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z DD imagerel $LN3
+	DD	imagerel $LN3+221
+	DD	imagerel $unwind$?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z
+pdata	ENDS
 ;	COMDAT rtc$TMZ
 rtc$TMZ	SEGMENT
 _RTC_Shutdown.rtc$TMZ DQ FLAT:_RTC_Shutdown
@@ -191,6 +198,13 @@ CONST	SEGMENT
 	DB	'gram Files (x86)\Microsoft Visual Studio\2019\Community\VC\To'
 	DB	'ols\MSVC\14.29.30133\include\xlocale', 00H	; `string'
 CONST	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z DD 02d062301H
+	DD	0115231aH
+	DD	0700e0052H
+	DD	0d00c500dH
+xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
 $unwind$?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z DD 02d062801H
@@ -312,7 +326,103 @@ __JustMyCode_Default PROC				; COMDAT
 __JustMyCode_Default ENDP
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
+;	COMDAT ?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z
+_TEXT	SEGMENT
+a_vals$ = 32
+c_vals0$ = 96
+c_vals1$ = 160
+$T1 = 416
+$T2 = 480
+$T3 = 544
+c$ = 656
+a$ = 664
+?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z PROC	; Unpack_with_itself, COMDAT
+
+; 7    : void Unpack_with_itself(YmmVal c[2], const YmmVal* a) {
+
+$LN3:
+  00000	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  00005	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  0000a	41 55		 push	 r13
+  0000c	55		 push	 rbp
+  0000d	57		 push	 rdi
+  0000e	48 81 ec 90 02
+	00 00		 sub	 rsp, 656		; 00000290H
+  00015	4c 8d 6c 24 20	 lea	 r13, QWORD PTR [rsp+32]
+  0001a	48 8d 6c 24 40	 lea	 rbp, QWORD PTR [rsp+64]
+  0001f	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  00023	48 8d 0d 00 00
+	00 00		 lea	 rcx, OFFSET FLAT:__CC351F00_Ch04_02_fcpp@cpp
+  0002a	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
+
+; 8    : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
+
+  0002f	49 8b 85 98 02
+	00 00		 mov	 rax, QWORD PTR a$[r13]
+  00036	c5 fe 6f 00	 vmovdqu ymm0, YMMWORD PTR [rax]
+  0003a	c5 fe 7f 85 a0
+	01 00 00	 vmovdqu YMMWORD PTR $T1[rbp], ymm0
+  00042	c5 fe 6f 85 a0
+	01 00 00	 vmovdqu ymm0, YMMWORD PTR $T1[rbp]
+  0004a	c5 fe 7f 45 20	 vmovdqu YMMWORD PTR a_vals$[rbp], ymm0
+
+; 9    : 	__m256i c_vals0 = _mm256_unpacklo_epi32(a_vals, a_vals);
+
+  0004f	c5 fe 6f 45 20	 vmovdqu ymm0, YMMWORD PTR a_vals$[rbp]
+  00054	c5 fd 62 45 20	 vpunpckldq ymm0, ymm0, YMMWORD PTR a_vals$[rbp]
+  00059	c5 fe 7f 85 e0
+	01 00 00	 vmovdqu YMMWORD PTR $T2[rbp], ymm0
+  00061	c5 fe 6f 85 e0
+	01 00 00	 vmovdqu ymm0, YMMWORD PTR $T2[rbp]
+  00069	c5 fe 7f 45 60	 vmovdqu YMMWORD PTR c_vals0$[rbp], ymm0
+
+; 10   : 	__m256i c_vals1 = _mm256_unpackhi_epi32(a_vals, a_vals);
+
+  0006e	c5 fe 6f 45 20	 vmovdqu ymm0, YMMWORD PTR a_vals$[rbp]
+  00073	c5 fd 6a 45 20	 vpunpckhdq ymm0, ymm0, YMMWORD PTR a_vals$[rbp]
+  00078	c5 fe 7f 85 20
+	02 00 00	 vmovdqu YMMWORD PTR $T3[rbp], ymm0
+  00080	c5 fe 6f 85 20
+	02 00 00	 vmovdqu ymm0, YMMWORD PTR $T3[rbp]
+  00088	c5 fe 7f 85 a0
+	00 00 00	 vmovdqu YMMWORD PTR c_vals1$[rbp], ymm0
+
+; 11   : 	_mm256_store_si256((__m256i*) & c[0], c_vals0);
+
+  00090	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
+  00095	48 6b c0 00	 imul	 rax, rax, 0
+  00099	49 8b 8d 90 02
+	00 00		 mov	 rcx, QWORD PTR c$[r13]
+  000a0	48 03 c8	 add	 rcx, rax
+  000a3	48 8b c1	 mov	 rax, rcx
+  000a6	c5 fe 6f 45 60	 vmovdqu ymm0, YMMWORD PTR c_vals0$[rbp]
+  000ab	c5 fe 7f 00	 vmovdqu YMMWORD PTR [rax], ymm0
+
+; 12   : 	_mm256_store_si256((__m256i*) & c[1], c_vals1);
+
+  000af	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
+  000b4	48 6b c0 01	 imul	 rax, rax, 1
+  000b8	49 8b 8d 90 02
+	00 00		 mov	 rcx, QWORD PTR c$[r13]
+  000bf	48 03 c8	 add	 rcx, rax
+  000c2	48 8b c1	 mov	 rax, rcx
+  000c5	c5 fe 6f 85 a0
+	00 00 00	 vmovdqu ymm0, YMMWORD PTR c_vals1$[rbp]
+  000cd	c5 fe 7f 00	 vmovdqu YMMWORD PTR [rax], ymm0
+
+; 13   : }
+
+  000d1	49 8d a5 70 02
+	00 00		 lea	 rsp, QWORD PTR [r13+624]
+  000d8	5f		 pop	 rdi
+  000d9	5d		 pop	 rbp
+  000da	41 5d		 pop	 r13
+  000dc	c3		 ret	 0
+?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z ENDP	; Unpack_with_itself
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
 ;	COMDAT ?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z
 _TEXT	SEGMENT
 a_vals$ = 32
@@ -326,7 +436,7 @@ a$ = 664
 b$ = 672
 ?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z PROC	; PackI32_I16_Iavx2, COMDAT
 
-; 17   : {
+; 25   : {
 
 $LN3:
   00000	4c 89 44 24 18	 mov	 QWORD PTR [rsp+24], r8
@@ -341,10 +451,10 @@ $LN3:
   0001f	48 8d 6c 24 40	 lea	 rbp, QWORD PTR [rsp+64]
   00024	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
   00028	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__E321C1A6_Ch04_02_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__CC351F00_Ch04_02_fcpp@cpp
   0002f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
-; 18   : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
+; 26   : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
 
   00034	49 8b 85 98 02
 	00 00		 mov	 rax, QWORD PTR a$[r13]
@@ -355,7 +465,7 @@ $LN3:
 	01 00 00	 vmovdqu ymm0, YMMWORD PTR $T1[rbp]
   0004f	c5 fe 7f 45 20	 vmovdqu YMMWORD PTR a_vals$[rbp], ymm0
 
-; 19   : 	__m256i b_vals = _mm256_load_si256((__m256i*)b);
+; 27   : 	__m256i b_vals = _mm256_load_si256((__m256i*)b);
 
   00054	49 8b 85 a0 02
 	00 00		 mov	 rax, QWORD PTR b$[r13]
@@ -366,7 +476,7 @@ $LN3:
 	01 00 00	 vmovdqu ymm0, YMMWORD PTR $T2[rbp]
   0006f	c5 fe 7f 45 60	 vmovdqu YMMWORD PTR b_vals$[rbp], ymm0
 
-; 20   : 	__m256i c_vals = _mm256_packs_epi32(a_vals, b_vals);
+; 28   : 	__m256i c_vals = _mm256_packs_epi32(a_vals, b_vals);
 
   00074	c5 fe 6f 45 20	 vmovdqu ymm0, YMMWORD PTR a_vals$[rbp]
   00079	c5 fd 6b 45 60	 vpackssdw ymm0, ymm0, YMMWORD PTR b_vals$[rbp]
@@ -377,7 +487,7 @@ $LN3:
   0008e	c5 fe 7f 85 a0
 	00 00 00	 vmovdqu YMMWORD PTR c_vals$[rbp], ymm0
 
-; 21   : 	_mm256_store_si256((__m256i*)c, c_vals);
+; 29   : 	_mm256_store_si256((__m256i*)c, c_vals);
 
   00096	49 8b 85 90 02
 	00 00		 mov	 rax, QWORD PTR c$[r13]
@@ -385,7 +495,7 @@ $LN3:
 	00 00 00	 vmovdqu ymm0, YMMWORD PTR c_vals$[rbp]
   000a5	c5 fe 7f 00	 vmovdqu YMMWORD PTR [rax], ymm0
 
-; 22   : }
+; 30   : }
 
   000a9	49 8d a5 70 02
 	00 00		 lea	 rsp, QWORD PTR [r13+624]
@@ -396,7 +506,7 @@ $LN3:
 ?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z ENDP	; PackI32_I16_Iavx2
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
 ;	COMDAT ?UnpackU32_U64_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z
 _TEXT	SEGMENT
 a_vals$ = 32
@@ -412,7 +522,7 @@ a$ = 984
 b$ = 992
 ?UnpackU32_U64_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z PROC	; UnpackU32_U64_Iavx2, COMDAT
 
-; 8    : {
+; 16   : {
 
 $LN3:
   00000	4c 89 44 24 18	 mov	 QWORD PTR [rsp+24], r8
@@ -427,10 +537,10 @@ $LN3:
   0001f	48 8d 6c 24 40	 lea	 rbp, QWORD PTR [rsp+64]
   00024	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
   00028	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__E321C1A6_Ch04_02_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__CC351F00_Ch04_02_fcpp@cpp
   0002f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
-; 9    : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
+; 17   : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
 
   00034	49 8b 85 d8 03
 	00 00		 mov	 rax, QWORD PTR a$[r13]
@@ -441,7 +551,7 @@ $LN3:
 	02 00 00	 vmovdqu ymm0, YMMWORD PTR $T1[rbp]
   0004f	c5 fe 7f 45 20	 vmovdqu YMMWORD PTR a_vals$[rbp], ymm0
 
-; 10   : 	__m256i b_vals = _mm256_load_si256((__m256i*)b);
+; 18   : 	__m256i b_vals = _mm256_load_si256((__m256i*)b);
 
   00054	49 8b 85 e0 03
 	00 00		 mov	 rax, QWORD PTR b$[r13]
@@ -452,7 +562,7 @@ $LN3:
 	02 00 00	 vmovdqu ymm0, YMMWORD PTR $T2[rbp]
   0006f	c5 fe 7f 45 60	 vmovdqu YMMWORD PTR b_vals$[rbp], ymm0
 
-; 11   : 	__m256i c_vals0 = _mm256_unpacklo_epi32(a_vals, b_vals);
+; 19   : 	__m256i c_vals0 = _mm256_unpacklo_epi32(a_vals, b_vals);
 
   00074	c5 fe 6f 45 20	 vmovdqu ymm0, YMMWORD PTR a_vals$[rbp]
   00079	c5 fd 62 45 60	 vpunpckldq ymm0, ymm0, YMMWORD PTR b_vals$[rbp]
@@ -463,7 +573,7 @@ $LN3:
   0008e	c5 fe 7f 85 a0
 	00 00 00	 vmovdqu YMMWORD PTR c_vals0$[rbp], ymm0
 
-; 12   : 	__m256i c_vals1 = _mm256_unpackhi_epi32(a_vals, b_vals);
+; 20   : 	__m256i c_vals1 = _mm256_unpackhi_epi32(a_vals, b_vals);
 
   00096	c5 fe 6f 45 20	 vmovdqu ymm0, YMMWORD PTR a_vals$[rbp]
   0009b	c5 fd 6a 45 60	 vpunpckhdq ymm0, ymm0, YMMWORD PTR b_vals$[rbp]
@@ -474,7 +584,7 @@ $LN3:
   000b0	c5 fe 7f 85 e0
 	00 00 00	 vmovdqu YMMWORD PTR c_vals1$[rbp], ymm0
 
-; 13   : 	_mm256_store_si256((__m256i*) & c[0], c_vals0);
+; 21   : 	_mm256_store_si256((__m256i*) & c[0], c_vals0);
 
   000b8	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
   000bd	48 6b c0 00	 imul	 rax, rax, 0
@@ -486,7 +596,7 @@ $LN3:
 	00 00 00	 vmovdqu ymm0, YMMWORD PTR c_vals0$[rbp]
   000d6	c5 fe 7f 00	 vmovdqu YMMWORD PTR [rax], ymm0
 
-; 14   : 	_mm256_store_si256((__m256i*) & c[1], c_vals1);
+; 22   : 	_mm256_store_si256((__m256i*) & c[1], c_vals1);
 
   000da	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
   000df	48 6b c0 01	 imul	 rax, rax, 1
@@ -498,7 +608,7 @@ $LN3:
 	00 00 00	 vmovdqu ymm0, YMMWORD PTR c_vals1$[rbp]
   000f8	c5 fe 7f 00	 vmovdqu YMMWORD PTR [rax], ymm0
 
-; 15   : }
+; 23   : }
 
   000fc	49 8d a5 b0 03
 	00 00		 lea	 rsp, QWORD PTR [r13+944]
@@ -1343,7 +1453,7 @@ $LN3:
 wmemcpy	ENDP
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
 ;	COMDAT ?__empty_global_delete@@YAXPEAX_K@Z
 _TEXT	SEGMENT
 __formal$ = 224
@@ -1359,7 +1469,7 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   00013	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   00018	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__E321C1A6_Ch04_02_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__CC351F00_Ch04_02_fcpp@cpp
   0001f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   00024	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]
@@ -1369,7 +1479,7 @@ $LN3:
 ?__empty_global_delete@@YAXPEAX_K@Z ENDP		; __empty_global_delete
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02_fcpp.cpp
 ;	COMDAT ?__empty_global_delete@@YAXPEAX@Z
 _TEXT	SEGMENT
 __formal$ = 224
@@ -1383,7 +1493,7 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   0000e	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   00013	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__E321C1A6_Ch04_02_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__CC351F00_Ch04_02_fcpp@cpp
   0001a	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   0001f	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]

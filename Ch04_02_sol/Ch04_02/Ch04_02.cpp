@@ -6,13 +6,38 @@
 #include "Ch04_02.h"
 static void UnpackU32_U64(void);
 static void PackI32_I16(void);
+static void fun(void);
 static const std::string c_Line(82, '-');
 int main()
 {
 	UnpackU32_U64();
 	PackI32_I16();
+	fun();
 	return 0;
 }
+
+static void fun(void) {
+	YmmVal a, c[2];
+	const char nl = '\n';
+	a.m_U32[0] = 0x00000000; 
+	a.m_U32[1] = 0x11100111; 
+	a.m_U32[2] = 0x22211222; 
+	a.m_U32[3] = 0x33322333; 
+	a.m_U32[4] = 0x44433444; 
+	a.m_U32[5] = 0x55544555; 
+	a.m_U32[6] = 0x66655666; 
+	a.m_U32[7] = 0x77766777; 
+	Unpack_with_itself(c, &a);
+	std::cout << "\nResults for experimentary function\n" << c_Line << nl;
+	std::cout << "a lo " << a.ToStringX32(0) << nl;
+	std::cout << "a hi " << a.ToStringX32(1) << nl << nl;
+
+	std::cout << "c[0] lo qword" << c[0].ToStringX64(0) << nl;
+	std::cout << "c[0] hi qword" << c[0].ToStringX64(1) << nl << nl;
+	std::cout << "c[1] lo qword" << c[1].ToStringX64(0) << nl;
+	std::cout << "c[1] hi qword" << c[1].ToStringX64(1) << nl << nl;
+}
+
 static void UnpackU32_U64(void)
 {
 	YmmVal a, b, c[2];

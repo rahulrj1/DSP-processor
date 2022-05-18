@@ -18,6 +18,7 @@ static void MathI16(void)
 	YmmVal a, b, c[6];
 	const size_t w = 8;
 	const char nl = '\n', sp = ' ';
+
 	//a.m_I16[0] = 10; b.m_I16[0] = 1000;
 	//a.m_I16[1] = 20; b.m_I16[1] = 2000;
 	//a.m_I16[2] = 3000; b.m_I16[2] = 30;

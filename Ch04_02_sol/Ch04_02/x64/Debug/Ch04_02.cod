@@ -50,8 +50,8 @@ __845859A3_ios DB 01H
 __B7987E10_string DB 01H
 __67DA974F_xlocmon DB 01H
 __D96D2425_xloctime DB 01H
-__107F9394_YmmVal@h DB 01H
-__76BBE5F6_Ch04_02@cpp DB 01H
+__B8537A73_YmmVal@h DB 01H
+__6772073D_Ch04_02@cpp DB 01H
 __6151C81E_sstream DB 01H
 __A2FF0B9E_istream DB 01H
 __C12F3EA4_ostream DB 01H
@@ -268,15 +268,16 @@ PUBLIC	??_C@_0GI@OGMNKBMN@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@ ; `string'
 PUBLIC	??_7?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6B@ ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`vftable'
 PUBLIC	??_7?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6B@ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vftable'
 PUBLIC	??_8?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@7B@ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vbtable'
-PUBLIC	??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@ ; `string'
+PUBLIC	??_C@_0CC@CLNIBEBK@?6Results?5for?5this?5dummy?5functio@ ; `string'
 PUBLIC	??_C@_05OLKLENKD@a?5lo?5@			; `string'
-PUBLIC	??_C@_05GNDPDPAN@b?5lo?5@			; `string'
 PUBLIC	??_C@_05GAEEKGEG@a?5hi?5@			; `string'
-PUBLIC	??_C@_05OGNANEOI@b?5hi?5@			; `string'
 PUBLIC	??_C@_0O@BKOJOPKH@c?$FL0?$FN?5lo?5qword@	; `string'
 PUBLIC	??_C@_0O@IBGKLHCM@c?$FL0?$FN?5hi?5qword@	; `string'
 PUBLIC	??_C@_0O@IBEMKDMI@c?$FL1?$FN?5lo?5qword@	; `string'
 PUBLIC	??_C@_0O@BKMPPLED@c?$FL1?$FN?5hi?5qword@	; `string'
+PUBLIC	??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@ ; `string'
+PUBLIC	??_C@_05GNDPDPAN@b?5lo?5@			; `string'
+PUBLIC	??_C@_05OGNANEOI@b?5hi?5@			; `string'
 PUBLIC	??_C@_0CA@MGNGEGIN@?6Results?5for?5PackI32_I16_Iavx2?6@ ; `string'
 PUBLIC	??_C@_05KGGDOMKI@c?5lo?5@			; `string'
 PUBLIC	??_C@_05CNIMAHEN@c?5hi?5@			; `string'
@@ -399,6 +400,7 @@ EXTRN	??_E?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEAAPE
 EXTRN	??_E?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEAAPEAXI@Z:PROC ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vector deleting destructor'
 EXTRN	?UnpackU32_U64_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z:PROC ; UnpackU32_U64_Iavx2
 EXTRN	?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z:PROC ; PackI32_I16_Iavx2
+EXTRN	?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z:PROC ; Unpack_with_itself
 EXTRN	?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ:PROC ; std::basic_streambuf<char,std::char_traits<char> >::_Lock
 EXTRN	?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ:PROC ; std::basic_streambuf<char,std::char_traits<char> >::_Unlock
 EXTRN	?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAXAEBVlocale@2@@Z:PROC ; std::basic_streambuf<char,std::char_traits<char> >::imbue
@@ -1385,6 +1387,48 @@ $pdata$?dtor$5@?0??PackI32_I16@@YAXXZ@4HA DD imagerel ?dtor$5@?0??PackI32_I16@@Y
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
+$pdata$?fun@@YAXXZ DD imagerel ?fun@@YAXXZ
+	DD	imagerel ?fun@@YAXXZ+987
+	DD	imagerel $unwind$?fun@@YAXXZ
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?dtor$0@?0??fun@@YAXXZ@4HA DD imagerel ?dtor$0@?0??fun@@YAXXZ@4HA
+	DD	imagerel ?dtor$0@?0??fun@@YAXXZ@4HA+51
+	DD	imagerel $unwind$?dtor$0@?0??fun@@YAXXZ@4HA
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?dtor$1@?0??fun@@YAXXZ@4HA DD imagerel ?dtor$1@?0??fun@@YAXXZ@4HA
+	DD	imagerel ?dtor$1@?0??fun@@YAXXZ@4HA+51
+	DD	imagerel $unwind$?dtor$1@?0??fun@@YAXXZ@4HA
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?dtor$2@?0??fun@@YAXXZ@4HA DD imagerel ?dtor$2@?0??fun@@YAXXZ@4HA
+	DD	imagerel ?dtor$2@?0??fun@@YAXXZ@4HA+51
+	DD	imagerel $unwind$?dtor$2@?0??fun@@YAXXZ@4HA
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?dtor$3@?0??fun@@YAXXZ@4HA DD imagerel ?dtor$3@?0??fun@@YAXXZ@4HA
+	DD	imagerel ?dtor$3@?0??fun@@YAXXZ@4HA+51
+	DD	imagerel $unwind$?dtor$3@?0??fun@@YAXXZ@4HA
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?dtor$4@?0??fun@@YAXXZ@4HA DD imagerel ?dtor$4@?0??fun@@YAXXZ@4HA
+	DD	imagerel ?dtor$4@?0??fun@@YAXXZ@4HA+51
+	DD	imagerel $unwind$?dtor$4@?0??fun@@YAXXZ@4HA
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$?dtor$5@?0??fun@@YAXXZ@4HA DD imagerel ?dtor$5@?0??fun@@YAXXZ@4HA
+	DD	imagerel ?dtor$5@?0??fun@@YAXXZ@4HA+51
+	DD	imagerel $unwind$?dtor$5@?0??fun@@YAXXZ@4HA
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
 $pdata$??__Ec_Line@@YAXXZ DD imagerel ??__Ec_Line@@YAXXZ
 	DD	imagerel ??__Ec_Line@@YAXXZ+69
 	DD	imagerel $unwind$??__Ec_Line@@YAXXZ
@@ -1398,7 +1442,7 @@ pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
 $pdata$main DD	imagerel $LN3
-	DD	imagerel $LN3+49
+	DD	imagerel $LN3+54
 	DD	imagerel $unwind$main
 pdata	ENDS
 ;	COMDAT pdata
@@ -2153,6 +2197,19 @@ CONST	SEGMENT
 ??_C@_0CA@MGNGEGIN@?6Results?5for?5PackI32_I16_Iavx2?6@ DB 0aH, 'Results '
 	DB	'for PackI32_I16_Iavx2', 0aH, 00H		; `string'
 CONST	ENDS
+;	COMDAT ??_C@_05OGNANEOI@b?5hi?5@
+CONST	SEGMENT
+??_C@_05OGNANEOI@b?5hi?5@ DB 'b hi ', 00H		; `string'
+CONST	ENDS
+;	COMDAT ??_C@_05GNDPDPAN@b?5lo?5@
+CONST	SEGMENT
+??_C@_05GNDPDPAN@b?5lo?5@ DB 'b lo ', 00H		; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@
+CONST	SEGMENT
+??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@ DB 0aH, 'Results f'
+	DB	'or UnpackU32_U64_Iavx2', 0aH, 00H		; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_0O@BKMPPLED@c?$FL1?$FN?5hi?5qword@
 CONST	SEGMENT
 ??_C@_0O@BKMPPLED@c?$FL1?$FN?5hi?5qword@ DB 'c[1] hi qword', 00H ; `string'
@@ -2169,26 +2226,18 @@ CONST	ENDS
 CONST	SEGMENT
 ??_C@_0O@BKOJOPKH@c?$FL0?$FN?5lo?5qword@ DB 'c[0] lo qword', 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_05OGNANEOI@b?5hi?5@
-CONST	SEGMENT
-??_C@_05OGNANEOI@b?5hi?5@ DB 'b hi ', 00H		; `string'
-CONST	ENDS
 ;	COMDAT ??_C@_05GAEEKGEG@a?5hi?5@
 CONST	SEGMENT
 ??_C@_05GAEEKGEG@a?5hi?5@ DB 'a hi ', 00H		; `string'
-CONST	ENDS
-;	COMDAT ??_C@_05GNDPDPAN@b?5lo?5@
-CONST	SEGMENT
-??_C@_05GNDPDPAN@b?5lo?5@ DB 'b lo ', 00H		; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_05OLKLENKD@a?5lo?5@
 CONST	SEGMENT
 ??_C@_05OLKLENKD@a?5lo?5@ DB 'a lo ', 00H		; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@
+;	COMDAT ??_C@_0CC@CLNIBEBK@?6Results?5for?5this?5dummy?5functio@
 CONST	SEGMENT
-??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@ DB 0aH, 'Results f'
-	DB	'or UnpackU32_U64_Iavx2', 0aH, 00H		; `string'
+??_C@_0CC@CLNIBEBK@?6Results?5for?5this?5dummy?5functio@ DB 0aH, 'Results'
+	DB	' for this dummy function', 0aH, 00H		; `string'
 CONST	ENDS
 ;	COMDAT ??_8?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@7B@
 CONST	SEGMENT
@@ -3079,6 +3128,160 @@ $unwind$??__Ec_Line@@YAXXZ DD 025050f01H
 	DD	07003001dH
 	DD	05002H
 xdata	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DB	00H
+	DB	05H
+voltbl	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DB	00H
+	DB	05H
+voltbl	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DB	00H
+	DB	05H
+voltbl	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DB	00H
+	DB	05H
+voltbl	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DB	00H
+	DB	05H
+voltbl	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DB	00H
+	DB	05H
+voltbl	ENDS
+;	COMDAT voltbl
+voltbl	SEGMENT
+_volmd	DW	034H
+	DW	03c0H
+voltbl	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?dtor$5@?0??fun@@YAXXZ@4HA DD 041201H
+	DD	0d00e3212H
+	DD	0500b700cH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?dtor$4@?0??fun@@YAXXZ@4HA DD 041201H
+	DD	0d00e3212H
+	DD	0500b700cH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?dtor$3@?0??fun@@YAXXZ@4HA DD 041201H
+	DD	0d00e3212H
+	DD	0500b700cH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?dtor$2@?0??fun@@YAXXZ@4HA DD 041201H
+	DD	0d00e3212H
+	DD	0500b700cH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?dtor$1@?0??fun@@YAXXZ@4HA DD 041201H
+	DD	0d00e3212H
+	DD	0500b700cH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?dtor$0@?0??fun@@YAXXZ@4HA DD 041201H
+	DD	0d00e3212H
+	DD	0500b700cH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$ip2state$?fun@@YAXXZ DB 01aH
+	DB	00H
+	DB	00H
+	DB	0ddH, 04H
+	DB	02H
+	DB	'Z'
+	DB	00H
+	DB	'n'
+	DB	04H
+	DB	'n'
+	DB	00H
+	DB	082H
+	DB	06H
+	DB	'Z'
+	DB	00H
+	DB	088H
+	DB	08H
+	DB	'n'
+	DB	00H
+	DB	082H
+	DB	0aH
+	DB	'Z'
+	DB	00H
+	DB	088H
+	DB	0cH
+	DB	'n'
+	DB	00H
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$stateUnwindMap$?fun@@YAXXZ DB 0cH
+	DB	0eH
+	DD	imagerel ?dtor$0@?0??fun@@YAXXZ@4HA
+	DB	036H
+	DD	imagerel ?dtor$1@?0??fun@@YAXXZ@4HA
+	DB	05eH
+	DD	imagerel ?dtor$2@?0??fun@@YAXXZ@4HA
+	DB	086H
+	DD	imagerel ?dtor$3@?0??fun@@YAXXZ@4HA
+	DB	0aeH
+	DD	imagerel ?dtor$4@?0??fun@@YAXXZ@4HA
+	DB	0d6H
+	DD	imagerel ?dtor$5@?0??fun@@YAXXZ@4HA
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$cppxdata$?fun@@YAXXZ DB 028H
+	DD	imagerel $stateUnwindMap$?fun@@YAXXZ
+	DD	imagerel $ip2state$?fun@@YAXXZ
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?fun@@YAXXZ DD 02d063b19H
+	DD	010b2310H
+	DD	070040084H
+	DD	0d0025003H
+	DD	imagerel __GSHandlerCheck_EH4
+	DD	imagerel $cppxdata$?fun@@YAXXZ
+	DD	03deH
+	DD	040H
+	DD	020H
+xdata	ENDS
+;	COMDAT CONST
+CONST	SEGMENT
+?fun@@YAXXZ$rtcName$0 DB 061H				; fun
+	DB	00H
+	ORG $+2
+?fun@@YAXXZ$rtcName$1 DB 063H				; fun
+	DB	00H
+	ORG $+10
+?fun@@YAXXZ$rtcVarDesc DD 080H				; fun
+	DD	040H
+	DQ	FLAT:?fun@@YAXXZ$rtcName$1
+	DD	040H
+	DD	020H
+	DQ	FLAT:?fun@@YAXXZ$rtcName$0
+	ORG $+96
+?fun@@YAXXZ$rtcFrameData DD 02H				; fun
+	DD	00H
+	DQ	FLAT:?fun@@YAXXZ$rtcVarDesc
+CONST	ENDS
 ;	COMDAT voltbl
 voltbl	SEGMENT
 _volmd	DB	00H
@@ -9502,12 +9705,12 @@ $LN3:
 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ENDP ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
 ;	COMDAT main
 _TEXT	SEGMENT
 main	PROC						; COMDAT
 
-; 11   : {
+; 12   : {
 
 $LN3:
   00000	40 55		 push	 rbp
@@ -9516,28 +9719,32 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   0000a	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   0000f	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__76BBE5F6_Ch04_02@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
   00016	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
-; 12   : 	UnpackU32_U64();
+; 13   : 	UnpackU32_U64();
 
   0001b	e8 00 00 00 00	 call	 ?UnpackU32_U64@@YAXXZ	; UnpackU32_U64
 
-; 13   : 	PackI32_I16();
+; 14   : 	PackI32_I16();
 
   00020	e8 00 00 00 00	 call	 ?PackI32_I16@@YAXXZ	; PackI32_I16
 
-; 14   : 	return 0;
+; 15   : 	fun();
 
-  00025	33 c0		 xor	 eax, eax
+  00025	e8 00 00 00 00	 call	 ?fun@@YAXXZ		; fun
 
-; 15   : }
+; 16   : 	return 0;
 
-  00027	48 8d a5 c8 00
+  0002a	33 c0		 xor	 eax, eax
+
+; 17   : }
+
+  0002c	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]
-  0002e	5f		 pop	 rdi
-  0002f	5d		 pop	 rbp
-  00030	c3		 ret	 0
+  00033	5f		 pop	 rdi
+  00034	5d		 pop	 rbp
+  00035	c3		 ret	 0
 main	ENDP
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
@@ -9560,12 +9767,12 @@ text$yd	SEGMENT
 ??__Fc_Line@@YAXXZ ENDP					; `dynamic atexit destructor for 'c_Line''
 text$yd	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
 ;	COMDAT ??__Ec_Line@@YAXXZ
 text$di	SEGMENT
 ??__Ec_Line@@YAXXZ PROC					; `dynamic initializer for 'c_Line'', COMDAT
 
-; 9    : static const std::string c_Line(82, '-');
+; 10   : static const std::string c_Line(82, '-');
 
   00000	40 55		 push	 rbp
   00002	57		 push	 rdi
@@ -9573,7 +9780,7 @@ text$di	SEGMENT
 	00 00		 sub	 rsp, 232		; 000000e8H
   0000a	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   0000f	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__76BBE5F6_Ch04_02@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
   00016	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   0001b	41 b0 2d	 mov	 r8b, 45			; 0000002dH
   0001e	ba 52 00 00 00	 mov	 edx, 82			; 00000052H
@@ -9591,7 +9798,898 @@ text$di	SEGMENT
 ??__Ec_Line@@YAXXZ ENDP					; `dynamic initializer for 'c_Line''
 text$di	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+;	COMDAT ?fun@@YAXXZ
+_TEXT	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?fun@@YAXXZ PROC					; fun, COMDAT
+
+; 19   : static void fun(void) {
+
+  00000	41 55		 push	 r13
+  00002	55		 push	 rbp
+  00003	57		 push	 rdi
+  00004	48 81 ec 20 04
+	00 00		 sub	 rsp, 1056		; 00000420H
+  0000b	4c 8d 6c 24 20	 lea	 r13, QWORD PTR [rsp+32]
+  00010	48 8d 6c 24 40	 lea	 rbp, QWORD PTR [rsp+64]
+  00015	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  00019	48 8d 7c 24 20	 lea	 rdi, QWORD PTR [rsp+32]
+  0001e	b9 a0 00 00 00	 mov	 ecx, 160		; 000000a0H
+  00023	b8 cc cc cc cc	 mov	 eax, -858993460		; ccccccccH
+  00028	f3 ab		 rep stosd
+  0002a	48 8b 05 00 00
+	00 00		 mov	 rax, QWORD PTR __security_cookie
+  00031	49 33 c5	 xor	 rax, r13
+  00034	48 89 85 d8 03
+	00 00		 mov	 QWORD PTR __$ArrayPad$[rbp], rax
+  0003b	48 8d 0d 00 00
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
+  00042	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
+
+; 20   : 	YmmVal a, c[2];
+; 21   : 	const char nl = '\n';
+
+  00047	c6 85 b4 00 00
+	00 0a		 mov	 BYTE PTR nl$[rbp], 10
+
+; 22   : 	a.m_U32[0] = 0x00000000; 
+
+  0004e	b8 04 00 00 00	 mov	 eax, 4
+  00053	48 6b c0 00	 imul	 rax, rax, 0
+  00057	c7 44 05 20 00
+	00 00 00	 mov	 DWORD PTR a$[rbp+rax], 0
+
+; 23   : 	a.m_U32[1] = 0x11100111; 
+
+  0005f	b8 04 00 00 00	 mov	 eax, 4
+  00064	48 6b c0 01	 imul	 rax, rax, 1
+  00068	c7 44 05 20 11
+	01 10 11	 mov	 DWORD PTR a$[rbp+rax], 286261521 ; 11100111H
+
+; 24   : 	a.m_U32[2] = 0x22211222; 
+
+  00070	b8 04 00 00 00	 mov	 eax, 4
+  00075	48 6b c0 02	 imul	 rax, rax, 2
+  00079	c7 44 05 20 22
+	12 21 22	 mov	 DWORD PTR a$[rbp+rax], 572592674 ; 22211222H
+
+; 25   : 	a.m_U32[3] = 0x33322333; 
+
+  00081	b8 04 00 00 00	 mov	 eax, 4
+  00086	48 6b c0 03	 imul	 rax, rax, 3
+  0008a	c7 44 05 20 33
+	23 32 33	 mov	 DWORD PTR a$[rbp+rax], 858923827 ; 33322333H
+
+; 26   : 	a.m_U32[4] = 0x44433444; 
+
+  00092	b8 04 00 00 00	 mov	 eax, 4
+  00097	48 6b c0 04	 imul	 rax, rax, 4
+  0009b	c7 44 05 20 44
+	34 43 44	 mov	 DWORD PTR a$[rbp+rax], 1145254980 ; 44433444H
+
+; 27   : 	a.m_U32[5] = 0x55544555; 
+
+  000a3	b8 04 00 00 00	 mov	 eax, 4
+  000a8	48 6b c0 05	 imul	 rax, rax, 5
+  000ac	c7 44 05 20 55
+	45 54 55	 mov	 DWORD PTR a$[rbp+rax], 1431586133 ; 55544555H
+
+; 28   : 	a.m_U32[6] = 0x66655666; 
+
+  000b4	b8 04 00 00 00	 mov	 eax, 4
+  000b9	48 6b c0 06	 imul	 rax, rax, 6
+  000bd	c7 44 05 20 66
+	56 65 66	 mov	 DWORD PTR a$[rbp+rax], 1717917286 ; 66655666H
+
+; 29   : 	a.m_U32[7] = 0x77766777; 
+
+  000c5	b8 04 00 00 00	 mov	 eax, 4
+  000ca	48 6b c0 07	 imul	 rax, rax, 7
+  000ce	c7 44 05 20 77
+	67 76 77	 mov	 DWORD PTR a$[rbp+rax], 2004248439 ; 77766777H
+
+; 30   : 	Unpack_with_itself(c, &a);
+
+  000d6	48 8d 55 20	 lea	 rdx, QWORD PTR a$[rbp]
+  000da	48 8d 4d 60	 lea	 rcx, QWORD PTR c$[rbp]
+  000de	e8 00 00 00 00	 call	 ?Unpack_with_itself@@YAXQEAUYmmVal@@PEBU1@@Z ; Unpack_with_itself
+
+; 31   : 	std::cout << "\nResults for this dummy function\n" << c_Line << nl;
+
+  000e3	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0CC@CLNIBEBK@?6Results?5for?5this?5dummy?5functio@
+  000ea	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  000f1	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  000f6	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:?c_Line@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+  000fd	48 8b c8	 mov	 rcx, rax
+  00100	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  00105	b2 0a		 mov	 dl, 10
+  00107	48 8b c8	 mov	 rcx, rax
+  0010a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+
+; 32   : 	std::cout << "a lo " << a.ToStringX32(0) << nl;
+
+  0010f	45 33 c0	 xor	 r8d, r8d
+  00112	48 8d 95 58 02
+	00 00		 lea	 rdx, QWORD PTR $T5[rbp]
+  00119	48 8d 4d 20	 lea	 rcx, QWORD PTR a$[rbp]
+  0011d	e8 00 00 00 00	 call	 ?ToStringX32@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ; YmmVal::ToStringX32
+  00122	48 89 85 c8 03
+	00 00		 mov	 QWORD PTR tv236[rbp], rax
+  00129	48 8b 85 c8 03
+	00 00		 mov	 rax, QWORD PTR tv236[rbp]
+  00130	48 89 85 d0 03
+	00 00		 mov	 QWORD PTR tv225[rbp], rax
+  00137	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_05OLKLENKD@a?5lo?5@
+  0013e	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  00145	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  0014a	48 8b 95 d0 03
+	00 00		 mov	 rdx, QWORD PTR tv225[rbp]
+  00151	48 8b c8	 mov	 rcx, rax
+  00154	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  00159	b2 0a		 mov	 dl, 10
+  0015b	48 8b c8	 mov	 rcx, rax
+  0015e	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  00163	90		 npad	 1
+  00164	48 8d 8d 58 02
+	00 00		 lea	 rcx, QWORD PTR $T5[rbp]
+  0016b	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 33   : 	std::cout << "a hi " << a.ToStringX32(1) << nl << nl;
+
+  00170	41 b8 01 00 00
+	00		 mov	 r8d, 1
+  00176	48 8d 95 98 02
+	00 00		 lea	 rdx, QWORD PTR $T6[rbp]
+  0017d	48 8d 4d 20	 lea	 rcx, QWORD PTR a$[rbp]
+  00181	e8 00 00 00 00	 call	 ?ToStringX32@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ; YmmVal::ToStringX32
+  00186	48 89 85 c8 03
+	00 00		 mov	 QWORD PTR tv237[rbp], rax
+  0018d	48 8b 85 c8 03
+	00 00		 mov	 rax, QWORD PTR tv237[rbp]
+  00194	48 89 85 d0 03
+	00 00		 mov	 QWORD PTR tv227[rbp], rax
+  0019b	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_05GAEEKGEG@a?5hi?5@
+  001a2	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  001a9	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  001ae	48 8b 95 d0 03
+	00 00		 mov	 rdx, QWORD PTR tv227[rbp]
+  001b5	48 8b c8	 mov	 rcx, rax
+  001b8	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  001bd	b2 0a		 mov	 dl, 10
+  001bf	48 8b c8	 mov	 rcx, rax
+  001c2	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  001c7	b2 0a		 mov	 dl, 10
+  001c9	48 8b c8	 mov	 rcx, rax
+  001cc	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  001d1	90		 npad	 1
+  001d2	48 8d 8d 98 02
+	00 00		 lea	 rcx, QWORD PTR $T6[rbp]
+  001d9	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 34   : 
+; 35   : 	std::cout << "c[0] lo qword" << c[0].ToStringX64(0) << nl;
+
+  001de	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
+  001e3	48 6b c0 00	 imul	 rax, rax, 0
+  001e7	48 8d 44 05 60	 lea	 rax, QWORD PTR c$[rbp+rax]
+  001ec	45 33 c0	 xor	 r8d, r8d
+  001ef	48 8d 95 d8 02
+	00 00		 lea	 rdx, QWORD PTR $T7[rbp]
+  001f6	48 8b c8	 mov	 rcx, rax
+  001f9	e8 00 00 00 00	 call	 ?ToStringX64@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ; YmmVal::ToStringX64
+  001fe	48 89 85 c8 03
+	00 00		 mov	 QWORD PTR tv238[rbp], rax
+  00205	48 8b 85 c8 03
+	00 00		 mov	 rax, QWORD PTR tv238[rbp]
+  0020c	48 89 85 d0 03
+	00 00		 mov	 QWORD PTR tv229[rbp], rax
+  00213	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0O@BKOJOPKH@c?$FL0?$FN?5lo?5qword@
+  0021a	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  00221	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  00226	48 8b 95 d0 03
+	00 00		 mov	 rdx, QWORD PTR tv229[rbp]
+  0022d	48 8b c8	 mov	 rcx, rax
+  00230	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  00235	b2 0a		 mov	 dl, 10
+  00237	48 8b c8	 mov	 rcx, rax
+  0023a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  0023f	90		 npad	 1
+  00240	48 8d 8d d8 02
+	00 00		 lea	 rcx, QWORD PTR $T7[rbp]
+  00247	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 36   : 	std::cout << "c[0] hi qword" << c[0].ToStringX64(1) << nl << nl;
+
+  0024c	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
+  00251	48 6b c0 00	 imul	 rax, rax, 0
+  00255	48 8d 44 05 60	 lea	 rax, QWORD PTR c$[rbp+rax]
+  0025a	41 b8 01 00 00
+	00		 mov	 r8d, 1
+  00260	48 8d 95 18 03
+	00 00		 lea	 rdx, QWORD PTR $T8[rbp]
+  00267	48 8b c8	 mov	 rcx, rax
+  0026a	e8 00 00 00 00	 call	 ?ToStringX64@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ; YmmVal::ToStringX64
+  0026f	48 89 85 c8 03
+	00 00		 mov	 QWORD PTR tv239[rbp], rax
+  00276	48 8b 85 c8 03
+	00 00		 mov	 rax, QWORD PTR tv239[rbp]
+  0027d	48 89 85 d0 03
+	00 00		 mov	 QWORD PTR tv231[rbp], rax
+  00284	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0O@IBGKLHCM@c?$FL0?$FN?5hi?5qword@
+  0028b	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  00292	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  00297	48 8b 95 d0 03
+	00 00		 mov	 rdx, QWORD PTR tv231[rbp]
+  0029e	48 8b c8	 mov	 rcx, rax
+  002a1	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  002a6	b2 0a		 mov	 dl, 10
+  002a8	48 8b c8	 mov	 rcx, rax
+  002ab	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  002b0	b2 0a		 mov	 dl, 10
+  002b2	48 8b c8	 mov	 rcx, rax
+  002b5	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  002ba	90		 npad	 1
+  002bb	48 8d 8d 18 03
+	00 00		 lea	 rcx, QWORD PTR $T8[rbp]
+  002c2	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 37   : 	std::cout << "c[1] lo qword" << c[1].ToStringX64(0) << nl;
+
+  002c7	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
+  002cc	48 6b c0 01	 imul	 rax, rax, 1
+  002d0	48 8d 44 05 60	 lea	 rax, QWORD PTR c$[rbp+rax]
+  002d5	45 33 c0	 xor	 r8d, r8d
+  002d8	48 8d 95 58 03
+	00 00		 lea	 rdx, QWORD PTR $T9[rbp]
+  002df	48 8b c8	 mov	 rcx, rax
+  002e2	e8 00 00 00 00	 call	 ?ToStringX64@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ; YmmVal::ToStringX64
+  002e7	48 89 85 c8 03
+	00 00		 mov	 QWORD PTR tv240[rbp], rax
+  002ee	48 8b 85 c8 03
+	00 00		 mov	 rax, QWORD PTR tv240[rbp]
+  002f5	48 89 85 d0 03
+	00 00		 mov	 QWORD PTR tv233[rbp], rax
+  002fc	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0O@IBEMKDMI@c?$FL1?$FN?5lo?5qword@
+  00303	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  0030a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  0030f	48 8b 95 d0 03
+	00 00		 mov	 rdx, QWORD PTR tv233[rbp]
+  00316	48 8b c8	 mov	 rcx, rax
+  00319	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  0031e	b2 0a		 mov	 dl, 10
+  00320	48 8b c8	 mov	 rcx, rax
+  00323	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  00328	90		 npad	 1
+  00329	48 8d 8d 58 03
+	00 00		 lea	 rcx, QWORD PTR $T9[rbp]
+  00330	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 38   : 	std::cout << "c[1] hi qword" << c[1].ToStringX64(1) << nl << nl;
+
+  00335	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
+  0033a	48 6b c0 01	 imul	 rax, rax, 1
+  0033e	48 8d 44 05 60	 lea	 rax, QWORD PTR c$[rbp+rax]
+  00343	41 b8 01 00 00
+	00		 mov	 r8d, 1
+  00349	48 8d 95 98 03
+	00 00		 lea	 rdx, QWORD PTR $T10[rbp]
+  00350	48 8b c8	 mov	 rcx, rax
+  00353	e8 00 00 00 00	 call	 ?ToStringX64@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ; YmmVal::ToStringX64
+  00358	48 89 85 c8 03
+	00 00		 mov	 QWORD PTR tv241[rbp], rax
+  0035f	48 8b 85 c8 03
+	00 00		 mov	 rax, QWORD PTR tv241[rbp]
+  00366	48 89 85 d0 03
+	00 00		 mov	 QWORD PTR tv235[rbp], rax
+  0036d	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0O@BKMPPLED@c?$FL1?$FN?5hi?5qword@
+  00374	48 8b 0d 00 00
+	00 00		 mov	 rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+  0037b	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+  00380	48 8b 95 d0 03
+	00 00		 mov	 rdx, QWORD PTR tv235[rbp]
+  00387	48 8b c8	 mov	 rcx, rax
+  0038a	e8 00 00 00 00	 call	 ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+  0038f	b2 0a		 mov	 dl, 10
+  00391	48 8b c8	 mov	 rcx, rax
+  00394	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  00399	b2 0a		 mov	 dl, 10
+  0039b	48 8b c8	 mov	 rcx, rax
+  0039e	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
+  003a3	90		 npad	 1
+  003a4	48 8d 8d 98 03
+	00 00		 lea	 rcx, QWORD PTR $T10[rbp]
+  003ab	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 39   : }
+
+  003b0	48 8d 4d e0	 lea	 rcx, QWORD PTR [rbp-32]
+  003b4	48 8d 15 00 00
+	00 00		 lea	 rdx, OFFSET FLAT:?fun@@YAXXZ$rtcFrameData
+  003bb	e8 00 00 00 00	 call	 _RTC_CheckStackVars
+  003c0	48 8b 8d d8 03
+	00 00		 mov	 rcx, QWORD PTR __$ArrayPad$[rbp]
+  003c7	49 33 cd	 xor	 rcx, r13
+  003ca	e8 00 00 00 00	 call	 __security_check_cookie
+  003cf	49 8d a5 00 04
+	00 00		 lea	 rsp, QWORD PTR [r13+1024]
+  003d6	5f		 pop	 rdi
+  003d7	5d		 pop	 rbp
+  003d8	41 5d		 pop	 r13
+  003da	c3		 ret	 0
+?fun@@YAXXZ ENDP					; fun
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$0@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$0
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 58 02
+	00 00		 lea	 rcx, QWORD PTR $T5[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$0@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$0
+text$x	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$1@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$1
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 98 02
+	00 00		 lea	 rcx, QWORD PTR $T6[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$1@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$1
+text$x	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$2@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$2
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d d8 02
+	00 00		 lea	 rcx, QWORD PTR $T7[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$2@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$2
+text$x	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$3@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$3
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 18 03
+	00 00		 lea	 rcx, QWORD PTR $T8[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$3@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$3
+text$x	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$4@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$4
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 58 03
+	00 00		 lea	 rcx, QWORD PTR $T9[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$4@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$4
+text$x	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$5@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$5
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 98 03
+	00 00		 lea	 rcx, QWORD PTR $T10[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$5@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$5
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$0@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$0
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 58 02
+	00 00		 lea	 rcx, QWORD PTR $T5[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$0@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$0
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$1@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$1
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 98 02
+	00 00		 lea	 rcx, QWORD PTR $T6[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$1@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$1
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$2@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$2
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d d8 02
+	00 00		 lea	 rcx, QWORD PTR $T7[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$2@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$2
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$3@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$3
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 18 03
+	00 00		 lea	 rcx, QWORD PTR $T8[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$3@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$3
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$4@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$4
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 58 03
+	00 00		 lea	 rcx, QWORD PTR $T9[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$4@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$4
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT text$x
+text$x	SEGMENT
+a$ = 32
+c$ = 96
+nl$ = 180
+$T5 = 600
+$T6 = 664
+$T7 = 728
+$T8 = 792
+$T9 = 856
+$T10 = 920
+tv241 = 968
+tv240 = 968
+tv239 = 968
+tv238 = 968
+tv237 = 968
+tv236 = 968
+tv235 = 976
+tv233 = 976
+tv231 = 976
+tv229 = 976
+tv227 = 976
+tv225 = 976
+__$ArrayPad$ = 984
+?dtor$5@?0??fun@@YAXXZ@4HA PROC				; `fun'::`1'::dtor$5
+  00000	48 89 4c 24 08	 mov	 QWORD PTR [rsp+8], rcx
+  00005	48 89 54 24 10	 mov	 QWORD PTR [rsp+16], rdx
+  0000a	55		 push	 rbp
+  0000b	57		 push	 rdi
+  0000c	41 55		 push	 r13
+  0000e	48 83 ec 20	 sub	 rsp, 32			; 00000020H
+  00012	4c 8d 6a 20	 lea	 r13, QWORD PTR [rdx+32]
+  00016	48 8d 6a 40	 lea	 rbp, QWORD PTR [rdx+64]
+  0001a	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
+  0001e	48 8d 8d 98 03
+	00 00		 lea	 rcx, QWORD PTR $T10[rbp]
+  00025	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  0002a	48 83 c4 20	 add	 rsp, 32			; 00000020H
+  0002e	41 5d		 pop	 r13
+  00030	5f		 pop	 rdi
+  00031	5d		 pop	 rbp
+  00032	c3		 ret	 0
+?dtor$5@?0??fun@@YAXXZ@4HA ENDP				; `fun'::`1'::dtor$5
+text$x	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
 ;	COMDAT ?PackI32_I16@@YAXXZ
 _TEXT	SEGMENT
 a$ = 32
@@ -9619,7 +10717,7 @@ tv234 = 1008
 __$ArrayPad$ = 1016
 ?PackI32_I16@@YAXXZ PROC				; PackI32_I16, COMDAT
 
-; 40   : {
+; 65   : {
 
   00000	41 55		 push	 r13
   00002	55		 push	 rbp
@@ -9639,16 +10737,16 @@ __$ArrayPad$ = 1016
   00034	48 89 85 f8 03
 	00 00		 mov	 QWORD PTR __$ArrayPad$[rbp], rax
   0003b	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__76BBE5F6_Ch04_02@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
   00042	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
-; 41   : 	YmmVal a, b, c;
-; 42   : 	const char nl = '\n';
+; 66   : 	YmmVal a, b, c;
+; 67   : 	const char nl = '\n';
 
   00047	c6 85 d4 00 00
 	00 0a		 mov	 BYTE PTR nl$[rbp], 10
 
-; 43   : 	a.m_I32[0] = 10; b.m_I32[0] = 32768;
+; 68   : 	a.m_I32[0] = 10; b.m_I32[0] = 32768;
 
   0004e	b8 04 00 00 00	 mov	 eax, 4
   00053	48 6b c0 00	 imul	 rax, rax, 0
@@ -9659,7 +10757,7 @@ __$ArrayPad$ = 1016
   00068	c7 44 05 60 00
 	80 00 00	 mov	 DWORD PTR b$[rbp+rax], 32768 ; 00008000H
 
-; 44   : 	a.m_I32[1] = -200000; b.m_I32[1] = 6500;
+; 69   : 	a.m_I32[1] = -200000; b.m_I32[1] = 6500;
 
   00070	b8 04 00 00 00	 mov	 eax, 4
   00075	48 6b c0 01	 imul	 rax, rax, 1
@@ -9670,7 +10768,7 @@ __$ArrayPad$ = 1016
   0008a	c7 44 05 60 64
 	19 00 00	 mov	 DWORD PTR b$[rbp+rax], 6500 ; 00001964H
 
-; 45   : 	a.m_I32[2] = 300000; b.m_I32[2] = 42000;
+; 70   : 	a.m_I32[2] = 300000; b.m_I32[2] = 42000;
 
   00092	b8 04 00 00 00	 mov	 eax, 4
   00097	48 6b c0 02	 imul	 rax, rax, 2
@@ -9681,7 +10779,7 @@ __$ArrayPad$ = 1016
   000ac	c7 44 05 60 10
 	a4 00 00	 mov	 DWORD PTR b$[rbp+rax], 42000 ; 0000a410H
 
-; 46   : 	a.m_I32[3] = -4000; b.m_I32[3] = -68000;
+; 71   : 	a.m_I32[3] = -4000; b.m_I32[3] = -68000;
 
   000b4	b8 04 00 00 00	 mov	 eax, 4
   000b9	48 6b c0 03	 imul	 rax, rax, 3
@@ -9692,7 +10790,7 @@ __$ArrayPad$ = 1016
   000ce	c7 44 05 60 60
 	f6 fe ff	 mov	 DWORD PTR b$[rbp+rax], -68000 ; fffffffffffef660H
 
-; 47   : 	a.m_I32[4] = 9000; b.m_I32[4] = 25000;
+; 72   : 	a.m_I32[4] = 9000; b.m_I32[4] = 25000;
 
   000d6	b8 04 00 00 00	 mov	 eax, 4
   000db	48 6b c0 04	 imul	 rax, rax, 4
@@ -9703,7 +10801,7 @@ __$ArrayPad$ = 1016
   000f0	c7 44 05 60 a8
 	61 00 00	 mov	 DWORD PTR b$[rbp+rax], 25000 ; 000061a8H
 
-; 48   : 	a.m_I32[5] = 80000; b.m_I32[5] = 500000;
+; 73   : 	a.m_I32[5] = 80000; b.m_I32[5] = 500000;
 
   000f8	b8 04 00 00 00	 mov	 eax, 4
   000fd	48 6b c0 05	 imul	 rax, rax, 5
@@ -9714,7 +10812,7 @@ __$ArrayPad$ = 1016
   00112	c7 44 05 60 20
 	a1 07 00	 mov	 DWORD PTR b$[rbp+rax], 500000 ; 0007a120H
 
-; 49   : 	a.m_I32[6] = 200; b.m_I32[6] = -7000;
+; 74   : 	a.m_I32[6] = 200; b.m_I32[6] = -7000;
 
   0011a	b8 04 00 00 00	 mov	 eax, 4
   0011f	48 6b c0 06	 imul	 rax, rax, 6
@@ -9725,7 +10823,7 @@ __$ArrayPad$ = 1016
   00134	c7 44 05 60 a8
 	e4 ff ff	 mov	 DWORD PTR b$[rbp+rax], -7000 ; ffffffffffffe4a8H
 
-; 50   : 	a.m_I32[7] = -32769; b.m_I32[7] = 12500;
+; 75   : 	a.m_I32[7] = -32769; b.m_I32[7] = 12500;
 
   0013c	b8 04 00 00 00	 mov	 eax, 4
   00141	48 6b c0 07	 imul	 rax, rax, 7
@@ -9736,7 +10834,7 @@ __$ArrayPad$ = 1016
   00156	c7 44 05 60 d4
 	30 00 00	 mov	 DWORD PTR b$[rbp+rax], 12500 ; 000030d4H
 
-; 51   : 	PackI32_I16_Iavx2(&c, &a, &b);
+; 76   : 	PackI32_I16_Iavx2(&c, &a, &b);
 
   0015e	4c 8d 45 60	 lea	 r8, QWORD PTR b$[rbp]
   00162	48 8d 55 20	 lea	 rdx, QWORD PTR a$[rbp]
@@ -9744,7 +10842,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR c$[rbp]
   0016d	e8 00 00 00 00	 call	 ?PackI32_I16_Iavx2@@YAXPEAUYmmVal@@PEBU1@1@Z ; PackI32_I16_Iavx2
 
-; 52   : 	std::cout << "\nResults for PackI32_I16_Iavx2\n" << c_Line << nl;
+; 77   : 	std::cout << "\nResults for PackI32_I16_Iavx2\n" << c_Line << nl;
 
   00172	48 8d 15 00 00
 	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0CA@MGNGEGIN@?6Results?5for?5PackI32_I16_Iavx2?6@
@@ -9759,7 +10857,7 @@ __$ArrayPad$ = 1016
   00196	48 8b c8	 mov	 rcx, rax
   00199	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
 
-; 53   : 	std::cout << "a lo " << a.ToStringI32(0) << nl;
+; 78   : 	std::cout << "a lo " << a.ToStringI32(0) << nl;
 
   0019e	45 33 c0	 xor	 r8d, r8d
   001a1	48 8d 95 78 02
@@ -9789,7 +10887,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR $T6[rbp]
   001fa	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 54   : 	std::cout << "a hi " << a.ToStringI32(1) << nl << nl;
+; 79   : 	std::cout << "a hi " << a.ToStringI32(1) << nl << nl;
 
   001ff	41 b8 01 00 00
 	00		 mov	 r8d, 1
@@ -9823,7 +10921,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR $T7[rbp]
   00268	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 55   : 	std::cout << "b lo " << b.ToStringI32(0) << nl;
+; 80   : 	std::cout << "b lo " << b.ToStringI32(0) << nl;
 
   0026d	45 33 c0	 xor	 r8d, r8d
   00270	48 8d 95 f8 02
@@ -9853,7 +10951,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR $T8[rbp]
   002c9	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 56   : 	std::cout << "b hi " << b.ToStringI32(1) << nl << nl;
+; 81   : 	std::cout << "b hi " << b.ToStringI32(1) << nl << nl;
 
   002ce	41 b8 01 00 00
 	00		 mov	 r8d, 1
@@ -9887,7 +10985,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR $T9[rbp]
   00337	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 57   : 	std::cout << "c lo " << c.ToStringI16(0) << nl;
+; 82   : 	std::cout << "c lo " << c.ToStringI16(0) << nl;
 
   0033c	45 33 c0	 xor	 r8d, r8d
   0033f	48 8d 95 78 03
@@ -9918,7 +11016,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR $T10[rbp]
   0039b	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 58   : 	std::cout << "c hi " << c.ToStringI16(1) << nl << nl;
+; 83   : 	std::cout << "c hi " << c.ToStringI16(1) << nl << nl;
 
   003a0	41 b8 01 00 00
 	00		 mov	 r8d, 1
@@ -9953,7 +11051,7 @@ __$ArrayPad$ = 1016
 	00 00		 lea	 rcx, QWORD PTR $T11[rbp]
   0040c	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 59   : }
+; 84   : }
 
   00411	48 8d 4d e0	 lea	 rcx, QWORD PTR [rbp-32]
   00415	48 8d 15 00 00
@@ -10518,7 +11616,7 @@ __$ArrayPad$ = 1016
 ?dtor$5@?0??PackI32_I16@@YAXXZ@4HA ENDP			; `PackI32_I16'::`1'::dtor$5
 text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
 ;	COMDAT ?UnpackU32_U64@@YAXXZ
 _TEXT	SEGMENT
 a$ = 32
@@ -10552,7 +11650,7 @@ tv273 = 1168
 __$ArrayPad$ = 1176
 ?UnpackU32_U64@@YAXXZ PROC				; UnpackU32_U64, COMDAT
 
-; 17   : {
+; 42   : {
 
   00000	41 55		 push	 r13
   00002	55		 push	 rbp
@@ -10572,16 +11670,16 @@ __$ArrayPad$ = 1176
   00034	48 89 85 98 04
 	00 00		 mov	 QWORD PTR __$ArrayPad$[rbp], rax
   0003b	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__76BBE5F6_Ch04_02@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
   00042	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
-; 18   : 	YmmVal a, b, c[2];
-; 19   : 	const char nl = '\n';
+; 43   : 	YmmVal a, b, c[2];
+; 44   : 	const char nl = '\n';
 
   00047	c6 85 f4 00 00
 	00 0a		 mov	 BYTE PTR nl$[rbp], 10
 
-; 20   : 	a.m_U32[0] = 0x00000000; b.m_U32[0] = 0x88888888;
+; 45   : 	a.m_U32[0] = 0x00000000; b.m_U32[0] = 0x88888888;
 
   0004e	b8 04 00 00 00	 mov	 eax, 4
   00053	48 6b c0 00	 imul	 rax, rax, 0
@@ -10592,7 +11690,7 @@ __$ArrayPad$ = 1176
   00068	c7 44 05 60 88
 	88 88 88	 mov	 DWORD PTR b$[rbp+rax], -2004318072 ; 88888888H
 
-; 21   : 	a.m_U32[1] = 0x11111111; b.m_U32[1] = 0x99999999;
+; 46   : 	a.m_U32[1] = 0x11111111; b.m_U32[1] = 0x99999999;
 
   00070	b8 04 00 00 00	 mov	 eax, 4
   00075	48 6b c0 01	 imul	 rax, rax, 1
@@ -10603,7 +11701,7 @@ __$ArrayPad$ = 1176
   0008a	c7 44 05 60 99
 	99 99 99	 mov	 DWORD PTR b$[rbp+rax], -1717986919 ; 99999999H
 
-; 22   : 	a.m_U32[2] = 0x22222222; b.m_U32[2] = 0xaaaaaaaa;
+; 47   : 	a.m_U32[2] = 0x22222222; b.m_U32[2] = 0xaaaaaaaa;
 
   00092	b8 04 00 00 00	 mov	 eax, 4
   00097	48 6b c0 02	 imul	 rax, rax, 2
@@ -10614,7 +11712,7 @@ __$ArrayPad$ = 1176
   000ac	c7 44 05 60 aa
 	aa aa aa	 mov	 DWORD PTR b$[rbp+rax], -1431655766 ; aaaaaaaaH
 
-; 23   : 	a.m_U32[3] = 0x33333333; b.m_U32[3] = 0xbbbbbbbb;
+; 48   : 	a.m_U32[3] = 0x33333333; b.m_U32[3] = 0xbbbbbbbb;
 
   000b4	b8 04 00 00 00	 mov	 eax, 4
   000b9	48 6b c0 03	 imul	 rax, rax, 3
@@ -10625,7 +11723,7 @@ __$ArrayPad$ = 1176
   000ce	c7 44 05 60 bb
 	bb bb bb	 mov	 DWORD PTR b$[rbp+rax], -1145324613 ; bbbbbbbbH
 
-; 24   : 	a.m_U32[4] = 0x44444444; b.m_U32[4] = 0xcccccccc;
+; 49   : 	a.m_U32[4] = 0x44444444; b.m_U32[4] = 0xcccccccc;
 
   000d6	b8 04 00 00 00	 mov	 eax, 4
   000db	48 6b c0 04	 imul	 rax, rax, 4
@@ -10636,7 +11734,7 @@ __$ArrayPad$ = 1176
   000f0	c7 44 05 60 cc
 	cc cc cc	 mov	 DWORD PTR b$[rbp+rax], -858993460 ; ccccccccH
 
-; 25   : 	a.m_U32[5] = 0x55555555; b.m_U32[5] = 0xdddddddd;
+; 50   : 	a.m_U32[5] = 0x55555555; b.m_U32[5] = 0xdddddddd;
 
   000f8	b8 04 00 00 00	 mov	 eax, 4
   000fd	48 6b c0 05	 imul	 rax, rax, 5
@@ -10647,7 +11745,7 @@ __$ArrayPad$ = 1176
   00112	c7 44 05 60 dd
 	dd dd dd	 mov	 DWORD PTR b$[rbp+rax], -572662307 ; ddddddddH
 
-; 26   : 	a.m_U32[6] = 0x66666666; b.m_U32[6] = 0xeeeeeeee;
+; 51   : 	a.m_U32[6] = 0x66666666; b.m_U32[6] = 0xeeeeeeee;
 
   0011a	b8 04 00 00 00	 mov	 eax, 4
   0011f	48 6b c0 06	 imul	 rax, rax, 6
@@ -10658,7 +11756,7 @@ __$ArrayPad$ = 1176
   00134	c7 44 05 60 ee
 	ee ee ee	 mov	 DWORD PTR b$[rbp+rax], -286331154 ; eeeeeeeeH
 
-; 27   : 	a.m_U32[7] = 0x77777777; b.m_U32[7] = 0xffffffff;
+; 52   : 	a.m_U32[7] = 0x77777777; b.m_U32[7] = 0xffffffff;
 
   0013c	b8 04 00 00 00	 mov	 eax, 4
   00141	48 6b c0 07	 imul	 rax, rax, 7
@@ -10669,7 +11767,7 @@ __$ArrayPad$ = 1176
   00156	c7 44 05 60 ff
 	ff ff ff	 mov	 DWORD PTR b$[rbp+rax], -1 ; ffffffffH
 
-; 28   : 	UnpackU32_U64_Iavx2(c, &a, &b);
+; 53   : 	UnpackU32_U64_Iavx2(c, &a, &b);
 
   0015e	4c 8d 45 60	 lea	 r8, QWORD PTR b$[rbp]
   00162	48 8d 55 20	 lea	 rdx, QWORD PTR a$[rbp]
@@ -10677,7 +11775,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR c$[rbp]
   0016d	e8 00 00 00 00	 call	 ?UnpackU32_U64_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z ; UnpackU32_U64_Iavx2
 
-; 29   : 	std::cout << "\nResults for UnpackU32_U64_Iavx2\n" << c_Line << nl;
+; 54   : 	std::cout << "\nResults for UnpackU32_U64_Iavx2\n" << c_Line << nl;
 
   00172	48 8d 15 00 00
 	00 00		 lea	 rdx, OFFSET FLAT:??_C@_0CC@LIOLKKFF@?6Results?5for?5UnpackU32_U64_Iavx@
@@ -10692,7 +11790,7 @@ __$ArrayPad$ = 1176
   00196	48 8b c8	 mov	 rcx, rax
   00199	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z ; std::operator<<<std::char_traits<char> >
 
-; 30   : 	std::cout << "a lo " << a.ToStringX32(0) << nl;
+; 55   : 	std::cout << "a lo " << a.ToStringX32(0) << nl;
 
   0019e	45 33 c0	 xor	 r8d, r8d
   001a1	48 8d 95 98 02
@@ -10722,7 +11820,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T6[rbp]
   001fa	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 31   : 	std::cout << "b lo " << b.ToStringX32(0) << nl << nl;
+; 56   : 	std::cout << "b lo " << b.ToStringX32(0) << nl << nl;
 
   001ff	45 33 c0	 xor	 r8d, r8d
   00202	48 8d 95 d8 02
@@ -10755,7 +11853,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T7[rbp]
   00265	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 32   : 	std::cout << "a hi " << a.ToStringX32(1) << nl;
+; 57   : 	std::cout << "a hi " << a.ToStringX32(1) << nl;
 
   0026a	41 b8 01 00 00
 	00		 mov	 r8d, 1
@@ -10786,7 +11884,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T8[rbp]
   002c9	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 33   : 	std::cout << "b hi " << b.ToStringX32(1) << nl << nl;
+; 58   : 	std::cout << "b hi " << b.ToStringX32(1) << nl << nl;
 
   002ce	41 b8 01 00 00
 	00		 mov	 r8d, 1
@@ -10820,7 +11918,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T9[rbp]
   00337	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 34   : 	std::cout << "c[0] lo qword" << c[0].ToStringX64(0) << nl;
+; 59   : 	std::cout << "c[0] lo qword" << c[0].ToStringX64(0) << nl;
 
   0033c	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
   00341	48 6b c0 00	 imul	 rax, rax, 0
@@ -10854,7 +11952,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T10[rbp]
   003a8	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 35   : 	std::cout << "c[0] hi qword" << c[0].ToStringX64(1) << nl << nl;
+; 60   : 	std::cout << "c[0] hi qword" << c[0].ToStringX64(1) << nl << nl;
 
   003ad	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
   003b2	48 6b c0 00	 imul	 rax, rax, 0
@@ -10892,7 +11990,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T11[rbp]
   00426	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 36   : 	std::cout << "c[1] lo qword" << c[1].ToStringX64(0) << nl;
+; 61   : 	std::cout << "c[1] lo qword" << c[1].ToStringX64(0) << nl;
 
   0042b	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
   00430	48 6b c0 01	 imul	 rax, rax, 1
@@ -10926,7 +12024,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T12[rbp]
   00497	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 37   : 	std::cout << "c[1] hi qword" << c[1].ToStringX64(1) << nl << nl;
+; 62   : 	std::cout << "c[1] hi qword" << c[1].ToStringX64(1) << nl << nl;
 
   0049c	b8 20 00 00 00	 mov	 eax, 32			; 00000020H
   004a1	48 6b c0 01	 imul	 rax, rax, 1
@@ -10964,7 +12062,7 @@ __$ArrayPad$ = 1176
 	00 00		 lea	 rcx, QWORD PTR $T13[rbp]
   00515	e8 00 00 00 00	 call	 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 38   : }
+; 63   : }
 
   0051a	48 8d 4d e0	 lea	 rcx, QWORD PTR [rbp-32]
   0051e	48 8d 15 00 00
@@ -11807,7 +12905,7 @@ __$ArrayPad$ = 1176
 ?dtor$7@?0??UnpackU32_U64@@YAXXZ@4HA ENDP		; `UnpackU32_U64'::`1'::dtor$7
 text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ??$ToStringHex@_K@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEB_KHHI@Z
 _TEXT	SEGMENT
 oss$ = 16
@@ -11861,7 +12959,7 @@ $LN15:
   0004c	c7 85 24 05 00
 	00 00 00 00 00	 mov	 DWORD PTR $T15[rbp], 0
   00056	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0005d	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 67   :         std::ostringstream oss;
@@ -12452,7 +13550,7 @@ select$ = 1432
 ?dtor$3@?0???$ToStringHex@_K@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEB_KHHI@Z@4HA ENDP ; `YmmVal::ToStringHex<unsigned __int64>'::`1'::dtor$3
 text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ??$ToStringHex@I@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBIHHI@Z
 _TEXT	SEGMENT
 oss$ = 16
@@ -12506,7 +13604,7 @@ $LN15:
   0004c	c7 85 24 05 00
 	00 00 00 00 00	 mov	 DWORD PTR $T15[rbp], 0
   00056	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0005d	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 67   :         std::ostringstream oss;
@@ -13099,7 +14197,7 @@ select$ = 1432
 ?dtor$3@?0???$ToStringHex@I@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBIHHI@Z@4HA ENDP ; `YmmVal::ToStringHex<unsigned int>'::`1'::dtor$3
 text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ??$ToStringInt@H@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBHHHI@Z
 _TEXT	SEGMENT
 oss$ = 16
@@ -13146,7 +14244,7 @@ $LN12:
   0004c	c7 85 64 02 00
 	00 00 00 00 00	 mov	 DWORD PTR $T6[rbp], 0
   00056	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0005d	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 31   :         std::ostringstream oss;
@@ -13383,7 +14481,7 @@ select$ = 728
 ?dtor$0@?0???$ToStringInt@H@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBHHHI@Z@4HA ENDP ; `YmmVal::ToStringInt<int>'::`1'::dtor$0
 text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ??$ToStringInt@F@YmmVal@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBFHHI@Z
 _TEXT	SEGMENT
 oss$ = 16
@@ -13430,7 +14528,7 @@ $LN12:
   0004c	c7 85 64 02 00
 	00 00 00 00 00	 mov	 DWORD PTR $T6[rbp], 0
   00056	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0005d	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 31   :         std::ostringstream oss;
@@ -17066,7 +18164,7 @@ $initVBases$ = 264
 ?dtor$1@?0???0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ@4HA ENDP ; `std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >'::`1'::dtor$1
 text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ?ToStringX64@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
 _TEXT	SEGMENT
 $T1 = 196
@@ -17089,7 +18187,7 @@ $LN5:
   0001d	c7 85 c4 00 00
 	00 00 00 00 00	 mov	 DWORD PTR $T1[rbp], 0
   00027	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0002e	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 182  :         return ToStringHex(m_U64, sizeof(m_U64) / sizeof(uint64_t), 32, select);
@@ -17127,7 +18225,7 @@ $LN5:
 ?ToStringX64@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ENDP ; YmmVal::ToStringX64
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ?ToStringX32@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
 _TEXT	SEGMENT
 $T1 = 196
@@ -17150,7 +18248,7 @@ $LN5:
   0001d	c7 85 c4 00 00
 	00 00 00 00 00	 mov	 DWORD PTR $T1[rbp], 0
   00027	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0002e	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 177  :         return ToStringHex(m_U32, sizeof(m_U32) / sizeof(uint32_t), 16, select);
@@ -17188,7 +18286,7 @@ $LN5:
 ?ToStringX32@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ENDP ; YmmVal::ToStringX32
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ?ToStringI32@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
 _TEXT	SEGMENT
 $T1 = 196
@@ -17211,7 +18309,7 @@ $LN5:
   0001d	c7 85 c4 00 00
 	00 00 00 00 00	 mov	 DWORD PTR $T1[rbp], 0
   00027	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0002e	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 129  :         return ToStringInt(m_I32, sizeof(m_I32) / sizeof(int32_t), 16, select);
@@ -17249,7 +18347,7 @@ $LN5:
 ?ToStringI32@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z ENDP ; YmmVal::ToStringI32
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\YmmVal.h
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\YmmVal.h
 ;	COMDAT ?ToStringI16@YmmVal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
 _TEXT	SEGMENT
 $T1 = 196
@@ -17272,7 +18370,7 @@ $LN5:
   0001d	c7 85 c4 00 00
 	00 00 00 00 00	 mov	 DWORD PTR $T1[rbp], 0
   00027	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__107F9394_YmmVal@h
+	00 00		 lea	 rcx, OFFSET FLAT:__B8537A73_YmmVal@h
   0002e	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 124  :         return ToStringInt(m_I16, sizeof(m_I16) / sizeof(int16_t), 8, select);
@@ -23214,7 +24312,7 @@ $LN3:
 ??2@YAPEAX_KPEAX@Z ENDP					; operator new
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
 ;	COMDAT ?__empty_global_delete@@YAXPEAX_K@Z
 _TEXT	SEGMENT
 __formal$ = 224
@@ -23230,7 +24328,7 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   00013	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   00018	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__76BBE5F6_Ch04_02@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
   0001f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   00024	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]
@@ -23240,7 +24338,7 @@ $LN3:
 ?__empty_global_delete@@YAXPEAX_K@Z ENDP		; __empty_global_delete
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\Ch04_02_sol\Ch04_02\Ch04_02.cpp
+; File D:\DSP Project\Ch04_02_sol\Ch04_02\Ch04_02.cpp
 ;	COMDAT ?__empty_global_delete@@YAXPEAX@Z
 _TEXT	SEGMENT
 __formal$ = 224
@@ -23254,7 +24352,7 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   0000e	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   00013	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__76BBE5F6_Ch04_02@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__6772073D_Ch04_02@cpp
   0001a	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   0001f	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]
