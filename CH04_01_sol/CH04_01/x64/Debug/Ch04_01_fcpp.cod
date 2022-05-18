@@ -50,8 +50,8 @@ __4CB88277_xlocnum DB 01H
 __845859A3_ios DB 01H
 __67DA974F_xlocmon DB 01H
 __D96D2425_xloctime DB 01H
-__F61CEDE3_YmmVal@h DB 01H
-__3B2006D1_Ch04_01_fcpp@cpp DB 01H
+__5E300404_YmmVal@h DB 01H
+__1434D877_Ch04_01_fcpp@cpp DB 01H
 __6151C81E_sstream DB 01H
 __A2FF0B9E_istream DB 01H
 __C12F3EA4_ostream DB 01H
@@ -312,7 +312,7 @@ __JustMyCode_Default PROC				; COMDAT
 __JustMyCode_Default ENDP
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
+; File D:\DSP Project\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
 ;	COMDAT ?MathI32_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z
 _TEXT	SEGMENT
 a_vals$ = 32
@@ -351,7 +351,7 @@ $LN3:
   0001f	48 8d 6c 24 40	 lea	 rbp, QWORD PTR [rsp+64]
   00024	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
   00028	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__3B2006D1_Ch04_01_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__1434D877_Ch04_01_fcpp@cpp
   0002f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 25   : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
@@ -528,7 +528,7 @@ $LN3:
 ?MathI32_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z ENDP		; MathI32_Iavx2
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
+; File D:\DSP Project\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
 ;	COMDAT ?MathI16_Iavx2@@YAXQEAUYmmVal@@PEBU1@1@Z
 _TEXT	SEGMENT
 a_vals$ = 32
@@ -567,7 +567,7 @@ $LN3:
   0001f	48 8d 6c 24 40	 lea	 rbp, QWORD PTR [rsp+64]
   00024	48 83 e5 e0	 and	 rbp, -32		; ffffffffffffffe0H
   00028	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__3B2006D1_Ch04_01_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__1434D877_Ch04_01_fcpp@cpp
   0002f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
 
 ; 8    : 	__m256i a_vals = _mm256_load_si256((__m256i*)a);
@@ -1575,7 +1575,7 @@ $LN3:
 wmemcpy	ENDP
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
+; File D:\DSP Project\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
 ;	COMDAT ?__empty_global_delete@@YAXPEAX_K@Z
 _TEXT	SEGMENT
 __formal$ = 224
@@ -1591,7 +1591,7 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   00013	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   00018	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__3B2006D1_Ch04_01_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__1434D877_Ch04_01_fcpp@cpp
   0001f	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   00024	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]
@@ -1601,7 +1601,7 @@ $LN3:
 ?__empty_global_delete@@YAXPEAX_K@Z ENDP		; __empty_global_delete
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
-; File C:\Users\Rahul Kumar\source\repos\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
+; File D:\DSP Project\CH04_01_sol\CH04_01\Ch04_01_fcpp.cpp
 ;	COMDAT ?__empty_global_delete@@YAXPEAX@Z
 _TEXT	SEGMENT
 __formal$ = 224
@@ -1615,7 +1615,7 @@ $LN3:
 	00 00		 sub	 rsp, 232		; 000000e8H
   0000e	48 8d 6c 24 20	 lea	 rbp, QWORD PTR [rsp+32]
   00013	48 8d 0d 00 00
-	00 00		 lea	 rcx, OFFSET FLAT:__3B2006D1_Ch04_01_fcpp@cpp
+	00 00		 lea	 rcx, OFFSET FLAT:__1434D877_Ch04_01_fcpp@cpp
   0001a	e8 00 00 00 00	 call	 __CheckForDebuggerJustMyCode
   0001f	48 8d a5 c8 00
 	00 00		 lea	 rsp, QWORD PTR [rbp+200]
